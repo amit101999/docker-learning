@@ -1,0 +1,4 @@
+FROM node
+# this is the base container and on the top of this node container we will buil own docker file
+
+CMD ["node" , "-e" , "console.log(100)"]

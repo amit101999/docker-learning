@@ -1,0 +1,26 @@
+
+
+# to build docker file
+
+=> docker build -t docker-image-name docker file path 
+
+eg : docker build -t my-image . 
+
+-it -> interactive terminal
+--rm -> remove container after exit
+--init -> use init system to handle processes
+--publish or --p -> publish a port from the container to the host
+
+# to run docker file 
+=> docker run -it --rm image-name 
+=> docker run -it --init --publish or --p hostPort:containerMachinePORT   image-name
+
+# => to run bash file
+add just 'bash' at the end of the docker run command
+
+eg : docker run -it --rm my-image bash
+
+# to watch a sepecific file 
+ docker run -it --rm -p 3020:3000 -v "${pwd}" : <working dir name>
+#  if now any changes in working file the docker will watch and update the image 
+# this is called as bind mount
