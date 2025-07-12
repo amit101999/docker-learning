@@ -28,4 +28,18 @@ services:
     nodeService:
       image: node
       container_name: node_image
+
+    # now we have a mongo db aur other servie we can specify here
+    # now if we want to persist data then we can use volumes
+    # means weven if to close the compose the data well be there 
+    # if we down the compose and restart the compose file it the data will be there
+
+    # mongoservice:
+    #   image : mongo
+    # ...
+    # volumes:
+      # -data : ./data
+      # like this we can specify data 
+
+volumes:
      
