@@ -1,0 +1,31 @@
+version: "3.8"
+name: dockertut
+services:
+    sampleService:
+      image: sampleimage
+    # now eg : we can give image name or  we can give path if we dont have image and docker file name
+      # build:context: 
+      #   context: ./sample_image
+      #   dockerfile : dockerfile
+      container_name: myimage
+      environment:
+        - PORT=4000
+      ports:
+        - 4000:4000
+      depends_on:
+        - nodeService
+      # we can directly give env or if we want we can provide env file 
+      # env_file:
+      #   - .env
+
+        # give another image
+    # mongoDB:
+    #   image: mongo
+    #   container: mongoDB
+    #   ports:
+    #     - 27070:27017
+
+    nodeService:
+      image: node
+      container_name: node_image
+     
